@@ -1,0 +1,35 @@
+name: Deploy Blazor WebAssembly to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout репозиторий
+        uses: actions/checkout@v3
+
+      - name: Установка .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Публикация Blazor WebAssembly
+        run: dotnet publish -c Release -o release
+
+      - name: Размещение файлов в корне GitHub Pages
+        run: |
+          mkdir -p deploy
+          cp -r release/wwwroot/* deploy/
+          touch deploy/.nojekyll
+          echo "<base href=\"/my-blazor-site/\">" > deploy/index.html
+
+      - name: Деплой в ветку `gh-pages`
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deploy
