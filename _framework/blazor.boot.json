@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "HappyBirthday",
   "resources": {
-    "hash": "sha256-dQEjCJj5Ow1uBoHblFqAVtHJvVdAXb/rSTCWtG0uvc4=",
+    "hash": "sha256-GK7VUm0dqCA4e8G7J4KJcDCwbSAQeClUo94GfM4CD3s=",
     "jsModuleNative": {
       "dotnet.native.8.0.13.f1wj86lvfk.js": "sha256-xNQsYHtL1vcbrVTHDZAwJM4WovpoyjsrM2C6FQ8cW1w="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "HappyBirthday.wasm": "sha256-S4RBgoGFjquwDDjtFt/UVpIGk9lKZVKIKtaKJOmAzKE=",
+      "HappyBirthday.wasm": "sha256-ERHY9KQuttLqRWt2IWEg4K1Ucs/3/fYgibRXNGgnoOA=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-oCl2trqbgOySlKBaduw1fA89RVRLyA2HAA6yuOnHze0=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-spyk6aOlBqGuXrgkag654fMJljJemLYToKEcwC5Nvgo=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-Q4gQS+wAI/o1p0ABACPX+vUj06GrNg33CWKIBqv9S0w=",
