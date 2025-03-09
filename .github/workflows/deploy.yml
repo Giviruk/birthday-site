@@ -29,7 +29,7 @@ jobs:
           mkdir -p deploy
           cp -r release/wwwroot/* deploy/
           touch deploy/.nojekyll
-          echo "<base href=\"/birthday-site/\">" > deploy/index.html
+          echo "<base href=\"/\">" > deploy/index.html
 
       - name: Деплой в ветку `gh-pages`
         uses: peaceiris/actions-gh-pages@v4
