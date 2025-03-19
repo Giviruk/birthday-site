@@ -6,11 +6,24 @@ body {
     font-family: 'Rajdhani', sans-serif;
     text-align: center;
     padding: 20px;
-    overflow: hidden;
+    overflow: auto;
     letter-spacing: 1px;
     text-transform: uppercase;
     position: relative;
 }
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px); /* Лёгкий подъём при появлении */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Голографическая сетка */
 .holo-grid {
     position: fixed;
@@ -78,7 +91,7 @@ body {
 }
 
 @keyframes flickerLight {
-    0% { opacity: 1; }
+    0% { opacity: 0; }
     50% { opacity: 0.85; }
     100% { opacity: 1; }
 }
@@ -199,5 +212,54 @@ body {
     0% { opacity: 0.9; transform: scale(1.01); }
     50% { opacity: 0.8; transform: scale(1.02) skewX(0.5deg); }
     100% { opacity: 0.9; transform: scale(1.01); }
+}
+
+#codeEntryBox {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#codeInputContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#accessCodeInput {
+    background: #121212;
+    border: 1px solid #7dd87d;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 16px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+#submitCode {
+    background: #7dd87d;
+    border: none;
+    color: #121212;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#submitCode:hover {
+    background: #62b6cb;
+}
+
+.error-message {
+    color: #ff4d4d;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden-answer {
+    display: none;
 }
 

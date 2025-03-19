@@ -4,7 +4,7 @@
     font-family: 'Courier New', monospace;
     margin: 0;
     padding: 0;
-    overflow-y: auto; /* Разрешаем прокрутку вверх и вниз */
+    overflow: auto; /* Разрешаем прокрутку вверх и вниз */
 } 
 
 /* Сканирующая волна */
