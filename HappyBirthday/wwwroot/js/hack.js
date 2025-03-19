@@ -44,7 +44,7 @@
     }
 
     function showMessage(index) {
-        if (index >= 20 && !isAnswerCorrect) {
+        if (index >= 21 && !isAnswerCorrect) {
             let answerBox = document.getElementById("answerBox");
             let systemAnswerMessage = document.getElementById("systemAnswerMessage");
             systemAnswerMessage.style.opacity = "1";
@@ -86,7 +86,7 @@
                     resultMessage.style.visibility = "visible";
                     
                     isAnswerCorrect = true;
-                    showMessage(20)
+                    showMessage(21)
                 } else {
                     resultMessage.textContent = "Ошибка! Код отклонён.";
                     resultMessage.classList.remove("correct-answer");
@@ -117,7 +117,7 @@
             
             return;
         }
-        if(index > 20 && !isAnswerCorrect) return;
+        if(index > 21 && !isAnswerCorrect) return;
         let msg = messages[index];
         msg.classList.remove("hidden");
 
@@ -135,7 +135,7 @@
             msg.style.opacity = "1";
             msg.style.visibility = "visible";
             setTimeout(() => {
-                window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"});
+                //window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"});
                 showMessage(index + 1);
             }, delay);
         });

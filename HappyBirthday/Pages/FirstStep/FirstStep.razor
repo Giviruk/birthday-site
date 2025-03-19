@@ -1,6 +1,9 @@
-﻿@page "/"
+﻿@inject IJSRuntime JS
 
-<link href="css/site.css" rel="stylesheet" />
+@page "/"
+
+<link href="css/site.css" rel="stylesheet"/>
+<script src="js/site.js"></script>
 <!-- Голографическая сетка -->
 <div class="holo-grid"></div>
 <div class="holo-lines"></div>
@@ -37,5 +40,26 @@
     "Если ты найдёшь их... система будет готова к следующему этапу."<br><br>
 
     >> Данные фрагментированы. Используй восстановленный идентификатор.<br>
-    <span class="glitch">[ПЕРЕЙДИ К СЛЕДУЮЩЕМУ УРОВНЮ]</span>
+    <span class="glitch" onclick="">[ПЕРЕЙДИ К СЛЕДУЮЩЕМУ УРОВНЮ]</span>
+    <div id="codeEntryBox">
+        <p class="system-message">Введите код доступа для перехода:</p>
+
+        <div id="codeInputContainer">
+            <input type="text" id="accessCodeInput" placeholder="Введите код..."/>
+            <button id="submitCode">Подтвердить</button>
+        </div>
+
+        <p id="codeErrorMessage" class="error-message hidden-answer">Ошибка: неверный код!</p>
+    </div>
 </p>
+
+@code
+{
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("showElements");
+        }
+    }
+}
